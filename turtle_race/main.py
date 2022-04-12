@@ -1,12 +1,16 @@
 from turtle import Turtle, Screen
 import random
 
+
+# Create Screen
 screen = Screen()
 screen.title("TMNT  🐢  Race")
 screen.setup(width=500, height=500)
 screen.bgcolor("forestgreen")
 run_race = False
 
+
+# Make the racing field
 def make_field():
     dirt = Turtle()
     dirt.speed(0)
@@ -23,7 +27,7 @@ def make_field():
         dirt.right(90)
     dirt.end_fill()
 
-
+# Create a finish line
 def finish_line():
     line = Turtle()
     line.speed(0)
@@ -49,7 +53,7 @@ def finish_line():
         line.goto(210 + gap_size, ((210 - gap_size) - (i * gap_size * 2)))
         line.stamp()
 
-
+# Create the turtles that are running
 def turtle_runners():
     colors = ["red", "blue", "green", "gold", "purple", "pink"]
     turtle_coord = [-120, -70, -20, 30, 80, 130]
@@ -62,7 +66,7 @@ def turtle_runners():
         all_turtles.append(new_turtle)
     return all_turtles
 
-
+# Main game loop
 def game():
     make_field()
     finish_line()
