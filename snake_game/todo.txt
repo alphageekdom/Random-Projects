@@ -1,0 +1,19 @@
+
+1. Create a snake body
+    three squares on screen
+
+2. Move the snake
+
+3. Control the snake
+    control snake => keyboard controls
+
+4. Detect collision with food
+    put on screen
+    once hit, new food created
+    
+5. Create a scoreboard
+    score updates automatically
+
+6. Detect collision with wall
+    game should end when collided with wall
+    game end if snake hits own tail
