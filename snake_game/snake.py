@@ -22,6 +22,7 @@ class Snake:
             self.add_segment(position)
 
     def add_segment(self, position):
+        """Creates the body of the snake"""
         new_segment = Turtle(shape="square")
         new_segment.penup()
         new_segment.color("white")
@@ -29,6 +30,7 @@ class Snake:
         self.segments.append(new_segment)
 
     def extend(self):
+        """Increases the length of the snake"""
         self.add_segment(self.segments[-1].position())
 
     def move(self):
@@ -41,17 +43,21 @@ class Snake:
         self.head.forward(MOVE_DIST)
 
     def up(self):
+        """Moves the snake UP"""
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
 
     def down(self):
+        """Moves the snake DOWN"""
         if self.head.heading() != UP:
             self.head.setheading(DOWN)
 
     def left(self):
+        """Moves the snake to the LEFT"""
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
 
     def right(self):
+        """Moves the snake to the RIGHT"""
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
