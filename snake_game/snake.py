@@ -1,4 +1,3 @@
-from hashlib import new
 from turtle import Turtle
 
 START_POST = [(0, 0), (-20, 0), (-40, 0)]

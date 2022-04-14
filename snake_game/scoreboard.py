@@ -1,4 +1,3 @@
-from ast import arg
 from turtle import Turtle
 
 ALIGNMENT = "center"
