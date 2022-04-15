@@ -30,5 +30,5 @@ class Ball(Turtle):
     def reset(self):
         """Resets ball in the middle"""
         self.goto(0, 0)
-        self.momentum = 0.9
+        self.momentum = 0.1
         self.bounce_x()

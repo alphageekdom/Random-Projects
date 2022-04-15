@@ -15,10 +15,10 @@ class Paddle(Turtle):
         """Moves paddle up"""
         new_y = self.ycor() + 75
         self.goto(self.xcor(), new_y)
-        self.speed(0.09)
+        self.speed(0.1)
     
     def down(self):
         """Moves paddle down"""
         new_y = self.ycor() - 75
         self.goto(self.xcor(), new_y)
-        self.speed(0.09)
+        self.speed(0.1)
