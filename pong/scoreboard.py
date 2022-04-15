@@ -25,10 +25,11 @@ class Scoreboard(Turtle):
         self.write(self.r_score, align=ALIGNMENT, font=FONT)
 
     def r_point(self):
+        """Increses score for right player"""
         self.r_score += 1
         self.update_scoreboard()
 
     def l_point(self):
-        """Increases the score"""
+        """Increases the score for left player"""
         self.l_score += 1
         self.update_scoreboard()

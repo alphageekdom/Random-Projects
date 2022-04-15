@@ -32,16 +32,20 @@ while game_on:
     screen.update()
     ball.move()
 
+    # Ball hits upper or lower walls
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce_y()
 
+    # Check if ball hit the left or right paddle
     if ball.distance(r_paddle) < 30 and ball.xcor() > 340 or ball.distance(l_paddle) < 30 and ball.xcor() < -340:
         ball.bounce_x()
 
+    # Left paddle scores
     if ball.xcor() > 500:
         ball.reset()
         scoreboard.l_point()
 
+    # Right paddle scores
     if ball.xcor() < -500:
         ball.reset()
         scoreboard.r_point()

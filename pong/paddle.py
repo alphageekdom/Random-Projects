@@ -12,11 +12,13 @@ class Paddle(Turtle):
         self.speed(0)
     
     def up(self):
+        """Moves paddle up"""
         new_y = self.ycor() + 75
         self.goto(self.xcor(), new_y)
         self.speed(0.09)
     
     def down(self):
+        """Moves paddle down"""
         new_y = self.ycor() - 75
         self.goto(self.xcor(), new_y)
         self.speed(0.09)
