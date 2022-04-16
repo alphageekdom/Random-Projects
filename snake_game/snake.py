@@ -31,6 +31,13 @@ class Snake:
     def extend(self):
         """Increases the length of the snake"""
         self.add_segment(self.segments[-1].position())
+    
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments.clear()
+        self.make_snake()
+        self.head = self.segments[0]
 
     def move(self):
         """Givers movement to the snake"""
