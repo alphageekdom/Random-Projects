@@ -37,7 +37,7 @@ while game_on:
         ball.bounce_y()
 
     # Check if ball hit the left or right paddle
-    if ball.distance(r_paddle) < 30 and ball.xcor() > 340 or ball.distance(l_paddle) < 30 and ball.xcor() < -340:
+    if (ball.distance(r_paddle) < 30 and ball.xcor() > 340) or (ball.distance(l_paddle) < 30 and ball.xcor() < -340):
         ball.bounce_x()
 
     # Left paddle scores
