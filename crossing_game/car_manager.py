@@ -13,6 +13,7 @@ class CarManager:
         self.car_speed = STARTING_MOVE_DISTANCE
 
     def create_cars(self):
+        """Makes cars at random positions"""
         random_chance = random.randint(1, 6)
         if random_chance == 1:
             new_car = Turtle()
@@ -23,10 +24,12 @@ class CarManager:
             random_y = random.randrange(-250, 250, 20)
             new_car.goto(300, random_y)
             self.all_cars.append(new_car)
-    
+
     def move_car(self):
+        """The speed of the cars"""
         for car in self.all_cars:
             car.backward(self.car_speed)
-    
+
     def level_up(self):
+        """New level speed increse"""
         self.car_speed += MOVE_INCREMENT

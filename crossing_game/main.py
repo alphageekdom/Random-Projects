@@ -25,7 +25,7 @@ game_on = True
 while game_on:
     time.sleep(0.1)
     screen.update()
-    
+
     car_manager.create_cars()
     car_manager.move_car()
 
@@ -34,7 +34,7 @@ while game_on:
         if car.distance(player) < 22:
             game_on = False
             scoreboard.game_over()
-    
+
     # Check if at finish line
     if player.at_finish_line():
         player.go_to_start()
