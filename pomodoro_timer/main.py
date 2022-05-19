@@ -6,16 +6,27 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 1
+WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 REPS = 0
+TIMER = None
 
 # ---------------------------- TIMER RESET ------------------------------- #
+
+def reset_timer():
+    """Resets the Pomodoro Timer"""
+    window.after_cancel(TIMER)
+    canvas.itemconfig(timer_text, text="00:00")
+    timer_label.config(text="Timer")
+    check_mark_label.config(text="")
+    global REPS
+    REPS = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
 def start_timer():
+    """Keeps track of each time segments"""
     global REPS
     REPS += 1
     
@@ -35,15 +46,22 @@ def start_timer():
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
 def count_down(count):
+    """Creates the Pomodoro Timer and adds check marks to canvas"""
     min_count = math.floor(count / 60)
     sec_count = count % 60
     if sec_count < 10:
         sec_count = f"0{sec_count}"
     canvas.itemconfig(timer_text, text=f"{min_count}:{sec_count}")
     if count > 0:
-        window.after(1000, count_down, count - 1)
+        global TIMER
+        TIMER = window.after(1000, count_down, count - 1)
     else:
         start_timer()
+        marks = ""
+        work_sessions = math.floor(REPS/2)
+        for _ in range(work_sessions):
+            marks += "✓"
+        check_mark_label.config(text=marks)
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -63,14 +81,14 @@ canvas.grid(column=2, row=2)
 timer_label = Label(text="Timer", font=(FONT_NAME, 40, "bold"), bg=YELLOW, fg=GREEN)
 timer_label.grid(column=2, row=1)
 
-check_mark_label = Label(text="✓", font=(FONT_NAME, 40, "bold"), bg=YELLOW, fg=GREEN)
+check_mark_label = Label(font=(FONT_NAME, 40, "bold"), bg=YELLOW, fg=GREEN)
 check_mark_label.grid(column=2, row=4)
 
 # Buttons
 start_button = Button(text="Start", highlightbackground=YELLOW, command=start_timer)
 start_button.grid(column=1, row=3)
 
-reset_button = Button(text="Reset", highlightbackground=YELLOW)
+reset_button = Button(text="Reset", highlightbackground=YELLOW, command=reset_timer)
 reset_button.grid(column=3, row=3)
 
 window.mainloop()
