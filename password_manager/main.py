@@ -11,6 +11,7 @@ BLACK = "black"
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 def generate_password():
+    """Generates a random password"""
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
                'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -31,6 +32,7 @@ def generate_password():
 
 
 def save():
+    """Saves all the information that is submitted"""
     website = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
@@ -70,6 +72,7 @@ def save():
 # ---------------------------- FIND PASSWORD ------------------------------- #
 
 def find_password():
+    """Locates and presents the information that user is looking for"""
     website = website_entry.get()
     try:
         with open("data.json") as data_file:
