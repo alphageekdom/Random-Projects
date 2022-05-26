@@ -12,8 +12,12 @@ BLACK = "black"
 
 def generate_password():
     """Generates a random password"""
-    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
-               'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    letters = [
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
+        'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+    ]
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
@@ -115,31 +119,58 @@ password_label = Label(text="Password:", bg=WHITE, fg=BLACK)
 password_label.grid(column=0, row=3)
 
 # Entries
-website_entry = Entry(width=24, bg=WHITE, fg=BLACK,
-                      highlightthickness=0, insertbackground=BLACK)
+website_entry = Entry(
+    width=24,
+    bg=WHITE,
+    fg=BLACK,
+    highlightthickness=0,
+    insertbackground=BLACK
+)
 website_entry.grid(column=1, row=1)
 website_entry.focus()
 
-email_entry = Entry(width=38, bg=WHITE, fg=BLACK,
-                    highlightthickness=0, insertbackground=BLACK)
+email_entry = Entry(
+    width=38,
+    bg=WHITE,
+    fg=BLACK,
+    highlightthickness=0,
+    insertbackground=BLACK
+)
 email_entry.insert(0, "mytestemail@gmail.com")
 email_entry.grid(column=1, row=2, columnspan=2)
 
-password_entry = Entry(width=24, bg=WHITE, fg=BLACK,
-                       highlightthickness=0, insertbackground=BLACK)
+password_entry = Entry(
+    width=24,
+    bg=WHITE,
+    fg=BLACK,
+    highlightthickness=0,
+    insertbackground=BLACK
+)
 password_entry.grid(column=1, row=3)
 
 # Buttons
-generate_button = Button(text="Generate Password", width=10,
-                         highlightbackground=WHITE, command=generate_password)
+generate_button = Button(
+    text="Generate Password",
+    width=10,
+    highlightbackground=WHITE,
+    command=generate_password
+)
 generate_button.grid(column=2, row=3)
 
-add_button = Button(text="Add", width=36,
-                    highlightbackground=WHITE, command=save)
+add_button = Button(
+    text="Add",
+    width=36,
+    highlightbackground=WHITE,
+    command=save
+)
 add_button.grid(column=1, row=4, columnspan=2)
 
-search_button = Button(text="Search", width=10,
-                       highlightbackground=WHITE, command=find_password)
+search_button = Button(
+    text="Search",
+    width=10,
+    highlightbackground=WHITE,
+    command=find_password
+)
 search_button.grid(column=2, row=1)
 
 
