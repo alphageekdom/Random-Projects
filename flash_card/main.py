@@ -50,20 +50,44 @@ flip_timer = window.after(3000, func=flip_card)
 canvas = Canvas(width=800, height=526)
 front_card_image = PhotoImage(file="./images/card_front.png")
 back_card_image = PhotoImage(file="./images/card_back.png")
-background_image = canvas.create_image(400, 263, image=front_card_image)
-card_title = canvas.create_text(400, 150, text="", font=("Ariel", 40, "italic"), fill="black")
-card_word = canvas.create_text(400,263, text="", font=("Ariel", 60, "bold"), fill="black")
+background_image = canvas.create_image(
+    400,
+    263,
+    image=front_card_image
+)
+card_title = canvas.create_text(
+    400,
+    150,
+    text="",
+    font=("Ariel", 40, "italic"),
+    fill="black"
+)
+card_word = canvas.create_text(
+    400,
+    263,
+    text="",
+    font=("Ariel", 60, "bold"),
+    fill="black"
+)
 canvas.config(highlightthickness=0, bg=BACKGROUND_COLOR)
 canvas.grid(column=0, row=0, columnspan=2)
 
 # Button(s) setup
 
 cross_image = PhotoImage(file="./images/wrong.png")
-unknown_button = Button(image=cross_image, highlightbackground=BACKGROUND_COLOR, command=next_card)
+unknown_button = Button(
+    image=cross_image,
+    highlightbackground=BACKGROUND_COLOR,
+    command=next_card
+)
 unknown_button.grid(column=0, row=1)
 
 check_image = PhotoImage(file="./images/right.png")
-known_button = Button(image=check_image, highlightbackground=BACKGROUND_COLOR, command=is_known)
+known_button = Button(
+    image=check_image,
+    highlightbackground=BACKGROUND_COLOR,
+    command=is_known
+)
 known_button.grid(column=1, row=1)
 
 next_card()
