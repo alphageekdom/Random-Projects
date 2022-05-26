@@ -35,14 +35,16 @@ class QuizInterface:
         self.true_button = Button(
             image=self.true_image,
             highlightbackground=THEME_COLOR,
-            command=self.true_pressed)
+            command=self.true_pressed
+        )
         self.true_button.grid(column=0, row=2)
         
         self.false_image = PhotoImage(file="./images/false.png")
         self.false_button = Button(
             image=self.false_image,
             highlightbackground=THEME_COLOR,
-            command=self.false_pressed)
+            command=self.false_pressed
+        )
         self.false_button.grid(column=1, row=2)
         
         
